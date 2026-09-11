@@ -172,6 +172,15 @@ h1 {
   background: #ebe5dc;
 }
 
+.return-arrow {
+  text-decoration: none;
+}
+
+.return-arrow:hover,
+.return-arrow:focus-visible {
+  background: #ded5ca;
+}
+
 .message-card .primary-button {
   width: fit-content;
   min-width: 210px;
