@@ -1,5 +1,5 @@
 const Stripe = require('stripe');
-const CHECKOUT_PRICE_ID = 'price_1UDUmpBYgVWOtDQRsAkCGknh';
+const CHECKOUT_PRICE_ID = 'price_1UJ2YMBYgVWOtDQRHXXTzhUZ';
 
 module.exports = async function createCheckoutSession(req, res) {
   if (req.method !== 'POST') {
