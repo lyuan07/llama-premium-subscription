@@ -7,6 +7,10 @@ module.exports = async function createCheckoutSession(req, res) {
   }
 
   if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_PRICE_ID) {
+    console.error('Missing required Checkout configuration', {
+      hasStripeSecretKey: Boolean(process.env.STRIPE_SECRET_KEY),
+      hasStripePriceId: Boolean(process.env.STRIPE_PRICE_ID),
+    });
     return res.status(500).send('Checkout is temporarily unavailable.');
   }
 
