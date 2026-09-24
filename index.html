@@ -31,7 +31,7 @@
           <li>Priority travel support</li>
         </ul>
 
-        <form action="/api/create-checkout-session" method="post">
+        <form id="checkout-form" action="/api/create-checkout-session" method="post">
           <button class="primary-button" type="submit">Subscribe for $12/month</button>
         </form>
         <a class="secondary-link" href="./cancel/">Maybe later</a>
@@ -42,5 +42,10 @@
         </div>
       </section>
     </main>
+    <script>
+      if (window.location.hostname.endsWith('github.io')) {
+        document.getElementById('checkout-form').action = 'https://buy.stripe.com/test_bJe00i8i39AifaIfNOaIM01';
+      }
+    </script>
   </body>
 </html>
