@@ -1,4 +1,5 @@
 const Stripe = require('stripe');
+const CHECKOUT_PRICE_ID = 'price_1UDUmpBYgVWOtDQRsAkCGknh';
 
 module.exports = async function createCheckoutSession(req, res) {
   if (req.method !== 'POST') {
@@ -6,10 +7,9 @@ module.exports = async function createCheckoutSession(req, res) {
     return res.status(405).send('Method not allowed');
   }
 
-  if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_PRICE_ID) {
+  if (!process.env.STRIPE_SECRET_KEY) {
     console.error('Missing required Checkout configuration', {
       hasStripeSecretKey: Boolean(process.env.STRIPE_SECRET_KEY),
-      hasStripePriceId: Boolean(process.env.STRIPE_PRICE_ID),
     });
     return res.status(500).send('Checkout is temporarily unavailable.');
   }
@@ -23,7 +23,7 @@ module.exports = async function createCheckoutSession(req, res) {
       submit_type: 'subscribe',
       line_items: [
         {
-          price: process.env.STRIPE_PRICE_ID,
+          price: CHECKOUT_PRICE_ID,
           quantity: 1,
         },
       ],

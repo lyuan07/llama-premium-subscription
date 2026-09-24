@@ -15,9 +15,10 @@ The site includes:
 
 The subscription button sends a POST request to `api/create-checkout-session.js`. The endpoint uses Stripe's Node library to create a Checkout Session for the monthly Price, then redirects the customer to Stripe-hosted Checkout.
 
-The deployment requires two environment variables:
+The deployment requires one environment variable:
 
 - `STRIPE_SECRET_KEY`: a Stripe test-mode secret key
-- `STRIPE_PRICE_ID`: the recurring test Price used by the subscription
+
+The recurring test Price ID for the Llama Premium Travel Assistant is set in the Checkout endpoint.
 
 No credentials or real customer data are stored in this repository.
