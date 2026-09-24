@@ -2,6 +2,8 @@
 
 A small, public test integration for Llama Inc.'s Stripe Checkout subscription flow.
 
+Live demo: https://llama-premium-subscription.vercel.app
+
 The site includes:
 
 - A landing page with a monthly subscription button
