@@ -1,0 +1,10 @@
+{
+  "name": "llama-premium-subscription",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stripe Checkout subscription demo for Llama Inc.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "stripe": "^22.6.0"
+  }
+}
